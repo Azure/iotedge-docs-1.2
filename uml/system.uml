@@ -28,7 +28,7 @@ frame "Edge Device" as EdgeDevice {
 	package "Edge Native Processes" as NativeProcesses #line:red;line.bold;text:black {
 		package IoTIdentityService {
 			IS - [Identity Service]
-			CS - [Certificate Service]
+			CS - [Certificates Service]
 			KS - [Keys Service]
 			TS - [TPM Service]
 		}
@@ -71,7 +71,7 @@ frame "Child Device" as ChildDevice {
 [Identity Service] --> [TS] : HTTP/UDS
 [Identity Service] <.[#blue,dotted,thickness=8]do.> ProvisioningAPI : HTTPS
 
-[Certificate Service] --> [KS] : HTTP/UDS
+[Certificates Service] --> [KS] : HTTP/UDS
 [TPM Service] --> [P11] : PKCS #11
 [Keys Service] --> [P11] : PKCS #11
 
